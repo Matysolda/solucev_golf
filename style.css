@@ -50,6 +50,11 @@ nav ul li a {
     color: #ADA423;
 }
 
+nav ul li a:hover {
+    color:#EBDF41; /* Změň tuto hodnotu na požadovanou barvu */
+}
+
+
 /* Hamburger Menu Styles */
 .menu-toggle {
     display: none;
@@ -339,7 +344,56 @@ footer {
     color: #bebebe;
 }
 
-/* Responsive Styles */
+
+
+@media (min-width: 1800px) {
+
+    .onas h1 {
+        font-size: 78px;
+    }
+
+    .onas p {
+        font-size: 30px;
+    }
+
+    .onas h2 {
+        font-size: 60px;
+    }
+
+    .onas .citat {
+        font-size: 44px;
+    }
+
+    .aktuality h1 {
+        font-size: 78px;
+    }
+
+}
+
+@media (min-width: 1700px) {
+    
+    .card {
+        width: 450px;
+    }
+
+    .card img {
+        height: 300px;
+    }
+
+}
+
+@media (min-width: 2000px) {
+
+    .card {
+        width: 550px;
+    }
+
+    .card img {
+        height: 400px;
+    }
+
+}
+
 @media (max-width: 1200px) {
     .hero-text h1 {
         font-size: 48px;
