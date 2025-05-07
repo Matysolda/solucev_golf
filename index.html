@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Golfová škola Michal</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@700&family=Racing+Sans+One&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Horizon&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+    $('nav a').on('click', function(event) {
+        if (this.hash !== "") {
+            event.preventDefault();
+
+            var hash = this.hash;
+
+            $('html, body').animate({
+                scrollTop: $(hash).offset().top - $('header').outerHeight() // Odečítáme výšku headeru, aby se sekce neskryla za fixní menu
+            }, 800, function(){
+                window.location.hash = hash;
+            });
+
+            // Pokud je menu na mobilu otevřené, po kliknutí ho zavřeme
+            if ($('nav ul').hasClass('showing')) {
+                $('nav ul').removeClass('showing');
+            }
+        }
+    });
+});
+        $(document).ready(function() {
+            $('#menu-toggle').click(function() {
+                $('nav ul').toggleClass('showing');
+            });
+        });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="img/output-onlinepngtools.png" alt="Golfová škola Michal">
+        </div>
+        <nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <i class="ri-menu-line"></i>
+            </div>
+            <ul>
+                <li><a href="#uvod">Úvod</a></li>
+                <li><a href="#o-nas">O nás</a></li>
+                <li><a href="#aktuality">Aktuality</a></li>
+                <li><a href="#dulezite-informace">Důležité informace</a></li>
+                <li><a href="#kontakt">Kontakt</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="uvod" class="hero">
+        <img src="img/Úvod.png" alt="Golf Course">
+        <div class="hero-text">
+            <h1>Golfová škola Michal</h1>
+            <p>Karlštejn, Botanika</p>
+        </div>
+    </section>
+
+    <section id="o-nas" class="onas">
+        <h1><strong>O nás</strong></h1>
+        <p>Jsme skupina lidí, pro kterou je golf zábavou, sportem i životní filozofií. Naší snahou je, aby byl golf v Čechách a na Moravě brán tak, jako je tomu v zemích s dlouholetou golfovou tradicí. Aby mu nebyly přisuzovány různé negativní "nálepky", které mu nepřísluší, jsou zavádějící a golf si je nezaslouží.</p>
+        <div class="onas-content">
+            <img src="img/179519_436418106388823_2071710051_n.jpeg">
+            <div class="onas-text">
+                <h2>MICHAL ČERNOHUBÝ</h2>
+                <p class="citat">"Naším cílem je otevřít golf co nejvíce lidem a ukázat, jak zábavný a přístupný může být."</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="aktuality" class="aktuality">
+        <h1>Aktuality</h1>
+        <div class="card-container">
+            <a href="#"><div class="card">
+                <img src="img/aktualita1.jpeg" alt="Aktualita 1">
+                <h2>Karlštejnský kempík</h2>
+                <p>Báječná parta a spousta legrace. Díky všem, že jste přišli 🙏🏻😎🍀🥰⛳️.</p>
+            </div></a>
+            <a href="#"><div class="card">
+                <img src="img/aktualita2.jpeg" alt="Aktualita 2">
+                <h2>Karlštejnský Mišák</h2>
+                <p>díky všem, kteří si přišli zahrát. Prožijte si krásné prázdniny 🙏🏻🥰⛳️.</p>
+            </div></a>
+            <a href="#"><div class="card">
+                <img src="img/aktualita3.jpeg" alt="Aktualita 3">
+                <h2>Prázdninové tábory</h2>
+                <p>Tento rok budeme pořádat několik příměstských i pobytových táborů ⛳️.</p>
+            </div></a>
+        </div>
+    </section>
+
+    <section id="dulezite-informace" class="dulezite-informace-sekce">
+        <h1>Důležité informace</h1>
+        <div class="info-container">
+            <div class="info-block">
+                <h3>Tréninky</h3>
+                <p>Informace o typech tréninků, rozvrhu a trenérech.</p>
+                <ul>
+                    <li>Individuální tréninky</li>
+                    <li>Skupinové tréninky</li>
+                    <li>Tréninky pro začátečníky</li>
+                    <li>Tréninky pro pokročilé</li>
+                    <li><a href="#">Aktuální rozvrh tréninků</a></li>
+                </ul>
+            </div>
+            <div class="info-block">
+                <h3>Soustředění</h3>
+                <p>Termíny a detaily plánovaných golfových soustředění.</p>
+                <ul>
+                    <li>Letní soustředění: [Termín] - [Lokalita]</li>
+                    <li>Víkendová soustředění: [Termín] - [Lokalita]</li>
+                    <li>Přihlášky a více informací <a href="#">zde</a></li>
+                </ul>
+            </div>
+            <div class="info-block">
+                <h3>Ostatní</h3>
+                <p>Ceník, vybavení a další užitečné informace.</p>
+                <ul>
+                    <li><a href="#">Ceník tréninků a soustředění (PDF)</a></li>
+                    <li>Doporučené vybavení</li>
+                    <li>Podmínky účasti</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section id="kontakt" class="kontakt-sekce">
+        <h1>Kontakt</h1>
+        <div class="kontakt-container">
+            <div class="kontakt-udaje">
+                <h2>Golfová škola Michal</h2>
+                <p>Karlštejn, Botanika</p>
+                <p>Email: <a href="mailto:33misak33@gmail.com">33misak33@gmail.com</a></p>
+                <p>Tel: <a href="tel:+420XXXXXXXXX">+420 XXX XXX XXX</a></p>
+            </div>
+            <div class="kontakt-form">
+                <h3>Napište nám</h3>
+                <form action="#" method="post">
+                    <div class="form-group">
+                        <label for="jmeno">Jméno:</label>
+                        <input type="text" id="jmeno" name="jmeno" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">E-mail:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="predmet">Předmět:</label>
+                        <input type="text" id="predmet" name="predmet">
+                    </div>
+                    <div class="form-group">
+                        <label for="zprava">Zpráva:</label>
+                        <textarea id="zprava" name="zprava" rows="5" required></textarea>
+                    </div>
+                    <button type="submit">Odeslat zprávu</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Golfová škola Michal</h3>
+                <ul>
+                    <li><a href="#uvod">Úvod</a></li>
+                    <li><a href="#aktuality">Aktuality</a></li>
+                    <li><a href="#o-nas">O nás</a></li>
+                    <li><a href="#dulezite-informace">Důležité informace</a></li>
+                    <li><a href="#kontakt">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Kontakty</h3>
+                <p>Email: 33misak33@gmail.com</p>
+                <p>Adresa: Nová cesta 758
+                    Dobřichovice
+                    25229</p>
+            </div>
+            <div class="social-icons">
+                <a href="https://www.instagram.com"><i style="font-size: 2rem;" class="ri-instagram-line"></i></a>
+                <a href="https://www.facebook.com"><i style="font-size: 2rem;" class="ri-facebook-circle-line"></i></a>
+                <a href="https://www.linkedin.com"><i style="font-size: 2rem;" class="ri-linkedin-line"></i></a>
+            </div>
+            <div class="footer-section-part">
+                <img src="img/output-onlinepngtools.png" style="width: 55%; margin-top: 4%;">
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
