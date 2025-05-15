@@ -51,7 +51,7 @@ nav ul li a {
 }
 
 nav ul li a:hover {
-    color:#EBDF41; /* Změň tuto hodnotu na požadovanou barvu */
+    color:#EBDF41;
 }
 
 
@@ -67,12 +67,14 @@ nav ul.showing {
     display: block;
     position: absolute;
     top: 60px;
-    right: 0;
+    right: auto;
     background: rgba(45, 45, 45, 0.9);
-    width: 200px;
-    text-align: right;
+    width: auto;
+    text-align: left;
     border-radius: 0 0 0 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 10px 0;
+    min-width: 200px;
 }
 
 nav ul.showing li {
@@ -81,8 +83,14 @@ nav ul.showing li {
 }
 
 nav ul.showing li a {
-    padding: 10px;
+    padding: 10px 20px;
     display: block;
+    color: #fff;
+    white-space: nowrap;
+}
+
+nav ul.showing li a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Hero Section Styles */
@@ -93,6 +101,7 @@ nav ul.showing li a {
 .hero img {
     width: 100%;
     height: 760px;
+    object-fit: cover;
 }
 
 .hero-text {
@@ -101,7 +110,7 @@ nav ul.showing li a {
     left: 40px;
     transform: translateY(-50%);
     color: #fff;
-    max-width: 50%;
+    max-width: 80%;
 }
 
 .hero-text h1 {
@@ -152,12 +161,15 @@ nav ul.showing li a {
     align-items: center;
     justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .onas img {
     border-radius: 20px;
     width: 30%;
     margin-top: 3%;
+    max-width: 400px;
+    height: auto;
 }
 
 .onas-text {
@@ -205,17 +217,19 @@ nav ul.showing li a {
     display: flex;
     justify-content: space-around;
     margin-top: 20px;
+    flex-wrap: wrap;
 }
 
 .card {
     width: 400px;
-    height: 350px;
+    height: auto;
     border-radius: 10px;
     background: #e0e0e0;
     box-shadow: 5px 5px 15px #bebebe, -5px -5px 15px #ffffff;
     overflow: hidden;
     transition: transform 0.3s ease;
     text-align: center;
+    margin-bottom: 20px;
 }
 
 .card img {
@@ -274,6 +288,7 @@ nav ul.showing li a {
     margin: 20px;
     min-width: 300px;
     text-align: left;
+    box-sizing: border-box;
 }
 
 .info-block h3 {
@@ -335,6 +350,9 @@ nav ul.showing li a {
 .kontakt-udaje {
     text-align: left;
     margin-bottom: 30px;
+    box-sizing: border-box;
+    width: 45%;
+    min-width: 300px;
 }
 
 .kontakt-udaje h2 {
@@ -360,6 +378,8 @@ nav ul.showing li a {
 .kontakt-form {
     text-align: left;
     min-width: 300px;
+    box-sizing: border-box;
+    width: 45%;
 }
 
 .kontakt-form h3 {
@@ -409,6 +429,7 @@ nav ul.showing li a {
     font-size: 18px;
     font-family: 'Baloo 2';
     transition: background-color 0.3s ease;
+    width: 100%;
 }
 
 .kontakt-form button[type="submit"]:hover {
@@ -428,16 +449,20 @@ footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    flex-wrap: wrap;
 }
 
 .footer-content {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     width: 100%;
+    flex-wrap: wrap;
 }
 
 .footer-section {
     margin-right: 20px;
+    margin-bottom: 20px;
+    min-width: 200px;
 }
 
 .footer-section h3 {
@@ -472,6 +497,9 @@ footer {
 .footer-section-part {
     margin-left: 5%;
     margin-right: 0;
+    margin-bottom: 20px;
+    text-align: center;
+    min-width: 150px;
 }
 
 .footer-section-part h3 {
@@ -484,7 +512,7 @@ footer {
     padding: 0;
 }
 
-.footer-section-part ul li {
+.footer-section-part ul li{
     margin-bottom: 5px;
 }
 
@@ -501,8 +529,10 @@ footer {
 .social-icons {
     display: flex;
     justify-content: center;
-    align-items: baseline;
+    align-items: center;
     margin-top: 2%;
+    margin-bottom: 20px;
+    width: 100%;
 }
 
 .social-icons a {
@@ -518,67 +548,184 @@ footer {
     color: #bebebe;
 }
 
+/* Media Queries for Responsiveness */
 
-
-@media (min-width: 1800px) {
-
-    .onas h1 {
-        font-size: 78px;
+@media (max-width: 1200px) {
+    .onas-content {
+        flex-direction: column;
+    }
+    .onas img {
+        width: 80%;
+        max-width: 500px;
+        margin-bottom: 20px;
+    }
+    .onas-text {
+        max-width: 100%;
     }
 
-    .onas p {
-        font-size: 30px;
+    .card {
+        width: 90%;
+        margin: 20px auto;
     }
+    .info-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .info-block {
+        width: 80%;
+        margin: 20px auto;
+    }
+    .kontakt-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    .kontakt-udaje,
+    .kontakt-form {
+        width: 80%;
+        margin: 20px auto;
+    }
+    footer {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-content {
+        flex-direction: column;
+        text-align: center;
+    }
+    .footer-section {
+        margin: 20px auto;
+    }
+    .footer-section-part {
+        margin: 20px auto;
+    }
+    nav ul {
+        display: none;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    header .logo{
+        margin-bottom: 10px;
+    }
+    .hero-text{
+        max-width: 95%;
+    }
+}
 
+@media (max-width: 768px) {
+    .onas h1{
+        font-size: 48px;
+    }
+    .onas p{
+        font-size: 18px;
+    }
+    .aktuality h1{
+        font-size: 48px;
+    }
+    .dulezite-informace-sekce h1{
+        font-size: 48px;
+    }
+    .kontakt-sekce h1{
+        font-size: 48px;
+    }
+    .hero-text h1 {
+        font-size: 40px;
+    }
+    .hero-text p {
+        font-size: 18px;
+    }
     .onas h2 {
-        font-size: 60px;
+        font-size: 32px;
     }
-
     .onas .citat {
-        font-size: 44px;
+        font-size: 24px;
     }
-
-    .aktuality h1 {
-        font-size: 78px;
+    .info-block h3{
+        font-size: 24px;
     }
-
-    .dulezite-informace-sekce h1 {
-        font-size: 78px;
+    .kontakt-udaje h2{
+        font-size: 28px;
     }
-
-    .info-block h3 {
-        font-size: 38px;
+    .kontakt-form h3{
+        font-size: 24px;
     }
+}
 
-    .info-block p {
-        font-size: 20px;
+/* Extra Small Devices (Phones) */
+@media (max-width: 480px) {
+    .hero img {
+        height: 500px;
     }
-
-    .kontakt-sekce h1 {
-        font-size: 78px;
+    .hero-text h1 {
+        font-size: 32px;
     }
-
-    .kontakt-udaje h2 {
-        font-size: 44px;
+    .hero-text p {
+        font-size: 16px;
     }
-
-    .kontakt-udaje p {
-        font-size: 20px;
+    .onas p {
+        font-size: 16px;
     }
-
-    .kontakt-form h3 {
-        font-size: 38px;
+    .onas h1{
+        font-size: 36px;
     }
-
-    .form-group label {
-        font-size: 20px;
+    .aktuality h1{
+        font-size: 36px;
     }
-
-    .form-group input,
-    .form-group textarea,
+    .dulezite-informace-sekce h1{
+        font-size: 36px;
+    }
+    .kontakt-sekce h1{
+        font-size: 36px;
+    }
+    .card {
+        width: 100%;
+    }
+    .kontakt-udaje,
+    .kontakt-form {
+        width: 95%;
+    }
+    .form-group input[type="text"],
+    .form-group input[type="email"],
+    .form-group textarea {
+        font-size: 14px;
+    }
     .kontakt-form button[type="submit"] {
-        font-size: 20px;
-        padding: 15px;
+        font-size: 16px;
     }
-
+    .onas h2{
+        font-size: 28px;
+    }
+    .onas .citat{
+        font-size: 20px;
+    }
+    .info-block h3 {
+        font-size: 20px;
+    }
+    .info-block p{
+        font-size: 14px;
+    }
+    .kontakt-udaje h2{
+        font-size: 24px;
+    }
+    .kontakt-udaje p{
+        font-size: 14px;
+    }
+    .kontakt-form h3{
+        font-size: 20px;
+    }
+    nav ul.showing {
+        width: 100%;
+        text-align: left;
+        border-radius: 0;
+        right: auto; 
+    }
+    nav ul.showing li a {
+        text-align: left;
+        padding: 8px 10px;
+        right: auto; 
+    }
 }
